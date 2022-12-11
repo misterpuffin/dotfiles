@@ -102,6 +102,9 @@ return packer.startup(function(use)
   -- buffer line
   use({ "akinsho/nvim-bufferline.lua", wants = "nvim-web-devicons" })
 
+  -- floating terminal
+  use("numToStr/FTerm.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end

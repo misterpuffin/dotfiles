@@ -79,3 +79,7 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- toggle floating terminal
+vim.keymap.set("n", "<C-t>", '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set("t", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
