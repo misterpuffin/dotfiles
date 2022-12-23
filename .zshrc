@@ -10,6 +10,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
+export GOROOT=/usr/local/go-1.18
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export BROWSER='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'

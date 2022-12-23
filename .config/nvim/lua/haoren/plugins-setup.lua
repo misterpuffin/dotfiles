@@ -109,6 +109,23 @@ return packer.startup(function(use)
   -- indent blankline
   use("lukas-reineke/indent-blankline.nvim")
 
+  -- json schema store
+  use("b0o/schemastore.nvim")
+
+  -- sane buffer delete
+  use("famiu/bufdelete.nvim")
+
+  use({
+    "phaazon/mind.nvim",
+    branch = "v2.2",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("mind").setup()
+    end,
+  })
+
+  use({ "stevearc/dressing.nvim" })
+
   if packer_bootstrap then
     require("packer").sync()
   end

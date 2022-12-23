@@ -83,3 +83,6 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 -- toggle floating terminal
 vim.keymap.set("n", "<C-t>", '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set("t", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+-- buffer delete
+keymap.set("n", "<leader>c", ":Bdelete<CR>") -- go to previous buffer

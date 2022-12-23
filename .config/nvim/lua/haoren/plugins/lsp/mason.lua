@@ -29,6 +29,9 @@ mason_lspconfig.setup({
     "sumneko_lua",
     "emmet_ls",
     "rust_analyzer",
+    "prismals",
+    "jsonls",
+    "gopls",
   },
   -- auto-install configured servers (with lspconfig)
   automatic_installation = true, -- not the same as ensure_installed

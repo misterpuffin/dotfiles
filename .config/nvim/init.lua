@@ -16,3 +16,8 @@ require("haoren.plugins.treesitter")
 require("haoren.plugins.gitsigns")
 require("haoren.plugins.bufferline")
 require("haoren.plugins.blankline")
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "tsconfig.json",
+  command = "setlocal filetype=jsonc",
+})
