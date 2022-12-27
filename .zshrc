@@ -27,6 +27,8 @@ bindkey '^]' autosuggest-accept
 bindkey '^p' up-line-or-history
 bindkey '^n' down-line-or-history
 
+alias python="python3"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
