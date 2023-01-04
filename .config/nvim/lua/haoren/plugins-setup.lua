@@ -137,6 +137,13 @@ return packer.startup(function(use)
     end,
   })
 
+  use({
+    "EtiamNullam/deferred-clipboard.nvim",
+    config = function()
+      require("deferred-clipboard").setup()
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
