@@ -130,6 +130,19 @@ etc/clusto*.conf
 !.config/xfce4/terminal
 !.config/xfce4/terminal/terminalrc
 
+# Neovim plugins, ftplugins, syntax etc etc
+!.config/nvim
+!.config/nvim/*
+!.config/nvim/*/*
+!.config/nvim/*/*/*
+!.config/nvim/*/*/*/*
+
+# Ignore swapfiles
+.config/nvim/.*.swp
+.config/nvim/*/.*.swp
+.config/nvim/*/*/.*.swp
+.config/nvim/*/*/*/.*.swp
+
 # Random arbitrary not-really-a-config file,
 # for use with hexdump
 !.config/hexdump.format
