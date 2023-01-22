@@ -18,4 +18,5 @@ if true then return {
       autotag = { enable = true },
     },
   },
+  {'ojroques/nvim-osc52'},
 } end
