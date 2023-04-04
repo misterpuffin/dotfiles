@@ -13,6 +13,21 @@ opt.shiftwidth = 2
 opt.shiftround = true
 opt.expandtab = true
 opt.autoindent = true
+opt.breakindent = true
+
+-- undo history
+opt.undofile = true
+
+-- decrease update time
+opt.updatetime = 250
+opt.timeout = true
+opt.timeoutlen = 300
+
+-- better completion
+opt.completeopt = 'menuone,noselect'
+
+-- options from kickstart that i'm not sure about
+vim.wo.signcolumn = 'yes'
 
 -- search settings
 opt.ignorecase = true
