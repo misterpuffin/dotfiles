@@ -27,21 +27,10 @@ return {
 				buffer = bufnr,
 				preserve_mappings = false,
 			})
-			lsp.buffer_autoformat()
+			vim.keymap.set({ 'n', 'x' }, 'gq', function()
+				vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+			end)
 		end)
-
-		lsp.format_mapping("gq", {
-			format_opts = {
-				async = false,
-				timeout_ms = 10000,
-			},
-		})
-
-		lsp.format_on_save({
-			format_opts = {
-				timeout_ms = 10000,
-			},
-		})
 
 		require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 		lsp.setup()

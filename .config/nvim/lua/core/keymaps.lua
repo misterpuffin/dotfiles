@@ -26,12 +26,6 @@ keymap.set({ "n", "v" }, "<leader>y", "\"+y")
 keymap.set({ "n", "v" }, "<leader>p", "\"+p")
 keymap.set({ "n", "v" }, "<leader>d", "\"+d")
 
--- window navigation
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-j>", "<C-w>j")
-keymap.set("n", "<C-k>", "<C-w>k")
-keymap.set("n", "<C-l>", "<C-w>l")
-
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
