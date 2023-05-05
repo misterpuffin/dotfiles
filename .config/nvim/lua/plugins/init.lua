@@ -1,15 +1,20 @@
 return {
-	{ "rmehri01/onenord.nvim", lazy = true },
+	{ "rmehri01/onenord.nvim",       lazy = true },
 	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
-	{ "folke/which-key.nvim",  opts = {} },
-	-- indent guides for Neovim
+	{ 'lervag/vimtex' },   -- VimTex
+	{ "folke/which-key.nvim",        opts = {} },
+	{ "max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup( { mapping = { "jk" }})
+		end,
+	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
 			-- char = "▏",
 			char = "│",
-			filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+			filetype_exclude = { "help", "dashboard", "lazy", "Trouble" },
 			show_trailing_blankline_indent = false,
 			show_current_context = false,
 		},
@@ -26,7 +31,7 @@ return {
 		},
 		init = function()
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+				pattern = { "help", "lazy", "dashboard", "mason", "Trouble"  },
 				callback = function()
 					vim.b.miniindentscope_disable = true
 				end,
@@ -65,11 +70,16 @@ return {
 		config = function()
 			require("Navigator").setup()
 
-			vim.keymap.set({'n', 't'}, '<C-h>', '<CMD>NavigatorLeft<CR>')
-			vim.keymap.set({'n', 't'}, '<C-l>', '<CMD>NavigatorRight<CR>')
-			vim.keymap.set({'n', 't'}, '<C-k>', '<CMD>NavigatorUp<CR>')
-			vim.keymap.set({'n', 't'}, '<C-j>', '<CMD>NavigatorDown<CR>')
-			vim.keymap.set({'n', 't'}, '<C-\\>', '<CMD>NavigatorPrevious<CR>')
+			vim.keymap.set({ 'n', 't' }, '<C-h>', '<CMD>NavigatorLeft<CR>')
+			vim.keymap.set({ 'n', 't' }, '<C-l>', '<CMD>NavigatorRight<CR>')
+			vim.keymap.set({ 'n', 't' }, '<C-k>', '<CMD>NavigatorUp<CR>')
+			vim.keymap.set({ 'n', 't' }, '<C-j>', '<CMD>NavigatorDown<CR>')
+			vim.keymap.set({ 'n', 't' }, '<C-\\>', '<CMD>NavigatorPrevious<CR>')
 		end
+	},
+	{
+		'stevearc/oil.nvim',
+		opts = {},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	}
 }

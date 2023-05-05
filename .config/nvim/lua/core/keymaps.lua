@@ -4,9 +4,6 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 local keymap = vim.keymap
 
--- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>")
-
 -- clear search highlights
 keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
@@ -18,8 +15,8 @@ keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
 -- remap for dealing with word wrap
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set({"n", "v"} , "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set({"n", "v"} , "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- copy/paste to clipboard
 keymap.set({ "n", "v" }, "<leader>y", "\"+y")
