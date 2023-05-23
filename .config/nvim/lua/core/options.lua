@@ -3,7 +3,6 @@ local opt = vim.opt
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-
 -- line numbers
 opt.relativenumber = true
 opt.number = true
@@ -47,3 +46,8 @@ opt.laststatus = 2
 opt.autowrite = true
 opt.autoread = true
 
+-- needed for nvim-ufo
+opt.foldcolumn = '1' -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true
