@@ -6,6 +6,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+			{ 'windwp/nvim-ts-autotag' }
 		},
 		keys = {
 			{ "<c-space>", desc = "Increment selection" },
@@ -14,6 +15,7 @@ return {
 
 		---@type TSConfig
 		opts = {
+			autotag = { enable = true },
 			highlight = { enable = true },
 			indent = { enable = true },
 			context_commentstring = { enable = true, enable_autocmd = false },
@@ -49,6 +51,7 @@ return {
 		---@param opts TSConfig
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
+			require('nvim-ts-autotag').setup()
 		end,
 	},
 }

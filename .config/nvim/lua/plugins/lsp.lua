@@ -30,6 +30,12 @@ return {
 			vim.keymap.set({ 'n', 'x' }, 'gq', function()
 				vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
 			end)
+			vim.keymap.set({ 'n', 'x' }, 'gn', function()
+				vim.lsp.buf.rename()
+			end)
+			vim.keymap.set({ 'n', 'x' }, 'ca', function()
+				vim.lsp.buf.code_action()
+			end)
 		end)
 
 		require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())

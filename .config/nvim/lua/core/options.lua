@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- line numbers
-opt.relativenumber = true
+-- opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
@@ -34,7 +34,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 --cursor line
-opt.cursorline = true
+-- opt.cursorline = true
 
 -- appearance
 opt.cmdheight = 0

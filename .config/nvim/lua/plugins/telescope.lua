@@ -176,6 +176,18 @@ return {
 					},
 				},
 			},
+			pickers = {
+				buffers = {
+					mappings = {
+						-- TODO: Find out why this isn't working
+						i = {
+							["<C-c>"] = function(...)
+								return require("telescope.actions").delete_buffer(...)
+							end
+						},
+					},
+				},
+			},
 		},
 	},
 }

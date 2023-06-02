@@ -1,7 +1,38 @@
 return {
+  -- [[Colorschemes]]
   { "rmehri01/onenord.nvim", lazy = true },
+  { "rebelot/kanagawa.nvim" },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = true,
+    config = function()
+      require('nightfox').setup({
+	options = {
+	  transparent = true,
+	}
+      })
+    end
+  },
+  -- [[Git integration]]
+  { "f-person/git-blame.nvim" }, -- In-line git blame
+  {'akinsho/git-conflict.nvim', version = "*", config = true},
+  {
+    -- Adds git releated signs to the gutter, as well as utilities for managing changes
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      -- See `:help gitsigns.txt`
+      signs = {
+	add = { text = "+" },
+	change = { text = "~" },
+	delete = { text = "_" },
+	topdelete = { text = "‾" },
+	changedelete = { text = "~" },
+      },
+    },
+  },
+  -- [[Editor plugins]]
   { "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
-  { 
+  {
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async'},
     config = function()
@@ -26,6 +57,14 @@ return {
     config = function()
       require("nvim-surround").setup({})
     end
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    build = "cd app && npm install",
+    config = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" }
   },
   { "folke/which-key.nvim",  opts = {} },
   {
@@ -68,20 +107,6 @@ return {
     end,
   },
   { "numToStr/Comment.nvim", opts = {} },
-  {
-    -- Adds git releated signs to the gutter, as well as utilities for managing changes
-    "lewis6991/gitsigns.nvim",
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-	add = { text = "+" },
-	change = { text = "~" },
-	delete = { text = "_" },
-	topdelete = { text = "‾" },
-	changedelete = { text = "~" },
-      },
-    },
-  },
   -- auto pairs
   {
     "echasnovski/mini.pairs",
