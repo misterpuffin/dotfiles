@@ -1,45 +1,28 @@
-# LazyVim
+<h1 align="center">	🐧 MisterPuffin's Nvim Config </h1>
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim)
+<p align="center">
+  <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.8.0+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)](https://github.com/neovim/neovim">
+</p>
 
-## 🚀 Getting Started
+MisterPuffin's personal Neovim configuration that is designed to be lightweight.
 
-This repo contains an example setup for
-[LazyVim](https://github.com/LazyVim/LazyVim)
+## 🔧 Plugins
 
-### 1. Make a backup of your current Neovim files:
+1. LSP Zero
+2. Telescope
+3. WhichKey
+4. GitSigns
 
-```sh
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
+## 🔨 Installation
+### Quick guide
+
+#### Prerequisites
+- Neovim (+0.9.0)
+
+#### Install
+```bash
+cd ~/.config
+cp -r nvim nvim.bak
 ```
 
-### 2. Clone the starter
 
-```sh
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-```
-
-### 3. Start Neovim!
-
-```sh
-nvim
-```
-
-Refer to the comments in the files on how to customize **LazyVim**.
-
-## 📂 File Structure
-
-<pre>
-~/.config/nvim
-├── lua
-│   ├── config
-│   │   ├── autocmds.lua
-│   │   ├── keymaps.lua
-│   │   ├── lazy.lua
-│   │   └── options.lua
-│   └── plugins
-│       └── example.lua
-├── init.lua
-└── stylua.toml
-</pre>
