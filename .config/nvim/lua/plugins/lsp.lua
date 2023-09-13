@@ -3,7 +3,7 @@ return {
 	branch = "v2.x",
 	dependencies = {
 		-- LSP Support
-		{ "neovim/nvim-lspconfig" },           -- Required
+		{ "neovim/nvim-lspconfig" },                                     -- Required
 		{ "williamboman/mason.nvim" },         -- Optional
 		{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
@@ -38,17 +38,6 @@ return {
 			end)
 		end)
 
-		require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-		require('lspconfig').astro.setup({
-			init_options = {
-				on_attach = lsp.on_attach,
-				capabilities = lsp.capabilities,
-				configuration = {},
-				typescript = {
-					serverPath = vim.fs.normalize '~/.local/share/pnpm/global/5/node_modules/typescript/lib/tsserverlibrary.js',
-				},
-			},
-		})
 		lsp.setup()
 
 		local cmp = require("cmp")
