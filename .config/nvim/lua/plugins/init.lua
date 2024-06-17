@@ -13,6 +13,23 @@ return {
       })
     end
   },
+  -- [[Latex]]
+  {
+    'lervag/vimtex',
+    config = function() 
+      vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_compiler_latexmk = {
+	build_dir = 'output',
+	options = {
+	  '-auxdir=aux',
+	  '-verbose',
+	  '-file-line-error',
+	  '-synctex=1',
+	  '-interaction=nonstopmode',
+	},
+      }
+    end
+  },
   -- [[Git integration]]
   { "f-person/git-blame.nvim" }, -- In-line git blame
   {
@@ -39,6 +56,24 @@ return {
 	changedelete = { text = "~" },
       },
     },
+  },
+  -- search and replace
+  { 
+    "nvim-pack/nvim-spectre",
+    config = function()
+      vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
+	desc = "Toggle Spectre"
+      })
+      vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+	desc = "Search current word"
+      })
+      vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+	desc = "Search current word"
+      })
+      vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+	desc = "Search on current file"
+      })
+    end
   },
   -- [[Editor plugins]]
   { "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
