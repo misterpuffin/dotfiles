@@ -50,8 +50,9 @@ return {
 		},
 		---@param opts TSConfig
 		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
-			require('nvim-ts-autotag').setup()
+			require('nvim-ts-autotag').setup({
+				opts
+			})
 		end,
 	},
 }
