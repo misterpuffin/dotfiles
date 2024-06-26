@@ -120,36 +120,18 @@ return {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
     event = { "BufReadPost", "BufNewFile" },
     opts = {
       -- char = "▏",
-      char = "│",
-      filetype_exclude = { "help", "dashboard", "lazy", "Trouble" },
-      show_trailing_blankline_indent = false,
-      show_current_context = false,
+      indent = {
+	char = "│"
+      },
+      exclude = {
+	filetypes = { "help", "dashboard", "lazy", "Trouble" }
+      },
+      scope = { enabled = true }
     },
-  },
-  -- active indent guide and indent text objects
-  {
-    "echasnovski/mini.indentscope",
-    version = false, -- wait till new 0.7.0 release to put it back on semver
-    event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      -- symbol = "▏",
-      symbol = "│",
-      options = { try_as_border = true },
-    },
-    init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "help", "lazy", "dashboard", "mason", "Trouble" },
-	callback = function()
-	  vim.b.miniindentscope_disable = true
-	end,
-      })
-    end,
-    config = function(_, opts)
-      require("mini.indentscope").setup(opts)
-    end,
   },
   { "numToStr/Comment.nvim", opts = {} },
   -- auto pairs
