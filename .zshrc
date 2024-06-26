@@ -21,7 +21,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export BROWSER='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
 
 # X-server for display
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
 # Key Bindings
@@ -116,7 +116,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -142,3 +142,5 @@ esac
 # fnm
 export PATH="/home/haoren/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+export PATH="/home/haoren/.local/share/bob/nvim-bin:$PATH"
