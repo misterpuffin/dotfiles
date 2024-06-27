@@ -10,38 +10,38 @@ MisterPuffin's personal Neovim configuration that is designed to be lightweight.
 
 <details>
   <summary>LSP</summary>
-  - mason + nvim-lspconfig + mason-lspconfig
-  - nvim-cmp
-  - LuaSnip
-  - lsp-zero.nvim
+  - mason + nvim-lspconfig + mason-lspconfig <br>
+  - nvim-cmp <br>
+  - LuaSnip <br>
+  - lsp-zero.nvim <br>
 </details>
 <details>
   <summary>Coding</summary>
-  - telescope.nvim
-  - nvim-spectre
-  - nvim-ufo
-  - nvim-surround
-  - better-escape
-  - Comment.nvim
-  - mini.pairs
-  - oil.nvim
+  - telescope.nvim <br>
+  - nvim-spectre <br>
+  - nvim-ufo <br>
+  - nvim-surround <br>
+  - better-escape <br>
+  - Comment.nvim <br>
+  - mini.pairs <br>
+  - oil.nvim <br>
 </details>
 <details>
   <summary>UI</summary>
-  - todo-comments
-  - which-key.nvim
-  - indent-blankline.nvim
+  - todo-comments <br>
+  - which-key.nvim <br>
+  - indent-blankline.nvim <br>
 </details>
 <details>
   <summary>Git</summary>
-  - git-blame.nvim
-  - gitsigns.nvim
+  - git-blame.nvim <br>
+  - gitsigns.nvim <br>
 </details>
 <details>
   <summary>Miscellaneous</summary>
-  - Vimtex
-  - markdown-preview
-  - Navigator.nvim (tmux navigation)
+  - Vimtex <br>
+  - markdown-preview <br>
+  - Navigator.nvim (tmux navigation) <br>
 </details>
 
 ## 🔨 Installation
