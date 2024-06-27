@@ -32,17 +32,7 @@ return {
   },
   -- [[Git integration]]
   { "f-person/git-blame.nvim" }, -- In-line git blame
-  {
-    "sindrets/diffview.nvim",
-    config = {
-      view = {
-	merge_tool = {
-	  layout = "diff3_mixed",
-	  winbar_info = true
-	}
-      }
-    }
-  },
+  {'akinsho/git-conflict.nvim', version = "2.0.0", config = true},
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
