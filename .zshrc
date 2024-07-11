@@ -8,13 +8,15 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Golang
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
+
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-
-export GOROOT=/usr/local/go-1.18
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
