@@ -30,9 +30,24 @@ return {
 			}
 		end
 	},
+	-- Move blocks of code
+	{
+		'echasnovski/mini.move',
+		version = '*',
+		config = function()
+			require('mini.move').setup({
+				mappings = {
+					left = '>',
+					right = '<',
+					down = 'J',
+					up = 'K'
+				}
+			})
+		end
+	},
 	-- [[Git integration]]
 	{ "f-person/git-blame.nvim" }, -- In-line git blame
-	{ 'akinsho/git-conflict.nvim', version = "2.0.0", config = true },
+	{ 'akinsho/git-conflict.nvim', version = "*", config = true },
 	{
 		-- Adds git releated signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",

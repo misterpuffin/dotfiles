@@ -15,13 +15,13 @@ keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
 -- remap for dealing with word wrap
-vim.keymap.set({"n", "v"} , "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set({"n", "v"} , "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- copy/paste to clipboard
 keymap.set({ "n", "v" }, "<leader>y", "\"+y")
-keymap.set({ "n", "v" }, "<leader>p", "\"+p")
 keymap.set({ "n", "v" }, "<leader>d", "\"+d")
+keymap.set({ "n", "v" }, "<leader>p", "\"+p")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -33,4 +33,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
-
