@@ -25,4 +25,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Created by `pipx` on 2025-02-17 12:36:57
+export PATH="$PATH:/home/haoren/.local/bin"
 . "$HOME/.cargo/env"

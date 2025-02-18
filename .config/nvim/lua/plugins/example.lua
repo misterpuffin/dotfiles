@@ -6,54 +6,14 @@
 -- * override the configuration of LazyVim plugins
 return {
   { "sainnhe/gruvbox-material" },
-  {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim", -- required by telescope
-      "MunifTanjim/nui.nvim",
-
-      -- optional
-      "nvim-treesitter/nvim-treesitter",
-      "rcarriga/nvim-notify",
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
-      -- configuration goes here
-    },
-  },
-  {
-    "cameron-wags/rainbow_csv.nvim",
-    config = true,
-    ft = {
-      "csv",
-      "tsv",
-      "csv_semicolon",
-      "csv_whitespace",
-      "csv_pipe",
-      "rfc_csv",
-      "rfc_semicolon",
-    },
-    cmd = {
-      "RainbowDelim",
-      "RainbowDelimSimple",
-      "RainbowDelimQuoted",
-      "RainbowMultiDelim",
-    },
-  },
   { "ellisonleao/gruvbox.nvim" },
   { "rebelot/kanagawa.nvim" },
-  { "sindrets/diffview.nvim" },
-  { "folke/flash.nvim", enabled = false },
   {
     "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup()
     end,
   },
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -69,9 +29,6 @@ return {
       colorscheme = "kanagawa-wave",
     },
   },
-
-  -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
 
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
@@ -148,13 +105,6 @@ return {
       })
     end,
   },
-
-  -- use mini.starter instead of alpha
-  { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
-
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",

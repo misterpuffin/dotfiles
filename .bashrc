@@ -116,27 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="$HOME/.nodenv/bin:$PATH"
-
-# Go Global variables
-export GOROOT=/usr/local/go-1.17
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$HOME/go/bin
-
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-export LIBGL_ALWAYS_INDIRECT=1
-
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# Created by `pipx` on 2025-02-17 12:36:57
+export PATH="$PATH:/home/haoren/.local/bin"
 . "$HOME/.cargo/env"
-
-export BROWSER='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
-
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
