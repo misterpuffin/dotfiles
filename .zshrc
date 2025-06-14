@@ -79,7 +79,23 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  zsh-history-substring-search
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+bindkey -r '^P'  # Remove default Ctrl+P binding
+bindkey -r '^N'  # Remove default Ctrl+N binding
+bindkey '^P' history-substring-search-up    # Ctrl+P = backward search
+bindkey '^N' history-substring-search-down  # Ctrl+N = forward search
+
+# Use autosuggestions
+source /home/haoren/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# CTRL + SPACE for accepting suggestions from history
+bindkey '^ ' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,3 +137,5 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/haoren/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+. "$HOME/.local/bin/env"
