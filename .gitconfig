@@ -4,15 +4,6 @@
 [core]
 	autocrlf = false
 	editor = nvim
-[credential]
-	cacheoptions = --timeout 720000
-	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe
-[safe]
-	directory = /home/haoren/projects/temp/microservices/
-	directory = /home/haoren/projects/temp/microservices
-	directory = /home/haoren/home/haoren/projects/temp/microservices
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [pull]
 	rebase = false
 [init]
