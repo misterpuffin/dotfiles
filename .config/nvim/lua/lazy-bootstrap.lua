@@ -39,8 +39,9 @@ require('lazy').setup {
     dependencies = { { "echasnovski/mini.icons", opts = {}}},
     lazy = false
   },
-  require 'kickstart.plugins.mini',
 
+  -- require 'kickstart.plugins.mini',
+  --
   -- require 'kickstart.plugins.gitsigns',
   --
   -- require 'kickstart.plugins.which-key',
@@ -59,12 +60,5 @@ require('lazy').setup {
   -- require 'kickstart.plugins.treesitter',
   --
   -- Auto import all plugins in .config/nvim/lua/plugins/*.lua
-  -- { import = 'plugins' },
-  -- I prefer to manually import the plugins so that it's easier to track what's in my config
-  require("plugins.colorscheme"),
-  require("plugins.which-key"),
-  require("plugins.treesitter"),
-  require("plugins.picker"),
-  require("plugins.blink-cmp"),
-  require("plugins.lspconfig")
+  { import = 'plugins' },
 }

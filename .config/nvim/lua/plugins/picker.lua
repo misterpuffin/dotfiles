@@ -4,20 +4,49 @@ return {
   ---@type snacks.Config
   opts = {
     picker = {
-      enabled = true
+      enabled = true,
       -- your picker configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
-    }
-  }, 
+    },
+  },
   keys = {
     -- Top Pickers & Explorer
-    { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "[F]ind [B]uffers" },
-    { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
-    { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-    { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
-    -- TODO: discover if I like the explorer
+    {
+      "<leader>pf",
+      function()
+        Snacks.picker.smart()
+      end,
+      desc = "[P]ick Files",
+    },
+    {
+      "<leader>pb",
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = "[P]ick [B]uffers",
+    },
+    {
+      "<leader>pg",
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = "[P]ick [G]rep",
+    },
+    {
+      "<leader>pc",
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = "[P]ick [C]ommand History",
+    },
+    {
+      "<leader>pn",
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = "[N]otification History",
+    },
     -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-  }
+  },
 }
