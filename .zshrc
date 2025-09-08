@@ -81,15 +81,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-history-substring-search
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
-
-bindkey -r '^P'  # Remove default Ctrl+P binding
-bindkey -r '^N'  # Remove default Ctrl+N binding
-bindkey '^P' history-substring-search-up    # Ctrl+P = backward search
-bindkey '^N' history-substring-search-down  # Ctrl+N = forward search
 
 # Use autosuggestions
 source /home/haoren/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -139,3 +133,5 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 . "$HOME/.local/bin/env"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
