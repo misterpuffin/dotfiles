@@ -6,15 +6,15 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
-require("options")
+require("config.options")
 
 -- [[ Basic Keymaps ]]
-require("keymaps")
+require("config.keymaps")
 
-require("lspconfig")
+require("config.lsp")
 
 -- [[ Install `lazy.nvim` plugin manager ]]
-require("lazy-bootstrap")
+require("config.lazy-bootstrap")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
