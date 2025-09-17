@@ -1,6 +1,5 @@
 return {
   {
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'rebelot/kanagawa.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
@@ -14,6 +13,7 @@ return {
       vim.cmd.colorscheme("kanagawa")
       vim.cmd("hi LineNr guibg=NONE")
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#727169', bg = 'none' })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
       vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     end,

@@ -36,11 +36,11 @@ return {
     },
     keys = {
       -- Top Pickers & Explorer
-      { "<leader>ff", function() require('plugins.fuzzy-finder.fff').fff() end, desc = "[P]ick Files" },
-      { "<leader>fb", function() Snacks.picker.buffers() end,                   desc = "[P]ick [B]uffers" },
-      { "<leader>fg", function() Snacks.picker.grep() end,                      desc = "[P]ick [G]rep" },
-      { "<leader>fc", function() Snacks.picker.command_history() end,           desc = "[P]ick [C]ommand History" },
-      { "<leader>fn", function() Snacks.picker.notifications() end,             desc = "[N]otification History" },
+      { "<leader> ",  function() require('plugins.fuzzy-finder.fff').fff() end, desc = "Find Files" },
+      { "<leader>fb", function() Snacks.picker.buffers() end,                   desc = "[F]ind [B]uffers" },
+      { "<leader>fg", function() Snacks.picker.grep() end,                      desc = "[F]ind [G]rep" },
+      { "<leader>fc", function() Snacks.picker.command_history() end,           desc = "[F]ind [C]ommand History" },
+      { "<leader>fn", function() Snacks.picker.notifications() end,             desc = "[F]ind [N]otification History" },
       -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     }
   }
