@@ -33,15 +33,19 @@ return {
           }
         }
       },
+      projects = {
+        enabled = true,
+      },
     },
     keys = {
-      -- Top Pickers & Explorer
-      { "<leader> ",  function() require('plugins.fuzzy-finder.fff').fff() end, desc = "Find Files" },
+      -- Find operations
+      { "<leader>ff", function() require('plugins.fuzzy-finder.fff').fff() end, desc = "[F]ind [F]iles" },
       { "<leader>fb", function() Snacks.picker.buffers() end,                   desc = "[F]ind [B]uffers" },
       { "<leader>fg", function() Snacks.picker.grep() end,                      desc = "[F]ind [G]rep" },
       { "<leader>fc", function() Snacks.picker.command_history() end,           desc = "[F]ind [C]ommand History" },
       { "<leader>fn", function() Snacks.picker.notifications() end,             desc = "[F]ind [N]otification History" },
-      -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+      { "<leader>fp", function() Snacks.picker.projects() end,                  desc = "[F]ind [P]rojects" },
+      { "<leader>fe", function() require('mini.files').open() end,           desc = "[F]ile [E]xplorer" },
     }
   }
 }

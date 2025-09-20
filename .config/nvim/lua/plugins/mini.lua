@@ -32,6 +32,18 @@ return {
         return '%2l:%-2v'
       end
 
+      -- File explorer
+      require('mini.files').setup({
+        windows = {
+          preview = true,
+          width_focus = 30,
+          width_preview = 30,
+        },
+        options = {
+          use_as_default_explorer = false,
+        },
+      })
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,

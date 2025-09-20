@@ -13,8 +13,8 @@ return {
     },
   },
   keys = {
-    { "<leader>st", function() Snacks.picker.todo_comments() end,                                          desc = "Todo" },
-    { "<leader>sT", function() Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
+    { "<leader>ft", function() Snacks.picker.todo_comments() end,                                          desc = "[F]ind [T]odo" },
+    { "<leader>fT", function() Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "[F]ind [T]odo/Fix/Fixme" },
   },
 }
 --  vim: ts=2 sts=2 sw=2 et

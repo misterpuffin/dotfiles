@@ -16,6 +16,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
     map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
     map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
+
+    -- Code operation aliases
+    map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
+    map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
     map('grr', function() require('snacks.picker').lsp_references() end, '[G]oto [R]eferences')
     map('gri', function() require('snacks.picker').lsp_implementations() end, '[G]oto [I]mplementation')
     map('grd', function() require('snacks.picker').lsp_definitions() end, '[G]oto [D]efinition')

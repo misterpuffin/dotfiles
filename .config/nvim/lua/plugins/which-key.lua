@@ -1,4 +1,3 @@
--- TODO: Fix conflicting keymaps :(
 return {
   { -- Useful plugin to show you pending keybinds.
     "folke/which-key.nvim",
@@ -46,9 +45,10 @@ return {
 
       -- Document existing key chains
       spec = {
-        { "<leader>p", group = "[P]ickers" },
+        { "<leader>f", group = "[F]ind/Files" },
+        { "<leader>g", group = "[G]it", mode = { "n", "v" } },
+        { "<leader>c", group = "[C]ode" },
         { "<leader>t", group = "[T]oggle" },
-        { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
       },
     },
   },
