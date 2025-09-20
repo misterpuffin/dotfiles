@@ -76,3 +76,6 @@ vim.o.virtualedit = "block"
 
 -- Use terminal colours
 vim.o.termguicolors = true
+
+-- Hide command line when not in use
+vim.opt.cmdheight = 0

@@ -18,6 +18,8 @@ return {
   },
   {
     "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
     ---@type snacks.Config
     opts = {
       picker = {
@@ -36,6 +38,12 @@ return {
       projects = {
         enabled = true,
       },
+      input = {
+        enabled = true,
+      },
+      notifier = {
+        enabled = true,
+      },
     },
     keys = {
       -- Find operations
@@ -45,7 +53,7 @@ return {
       { "<leader>fc", function() Snacks.picker.command_history() end,           desc = "[F]ind [C]ommand History" },
       { "<leader>fn", function() Snacks.picker.notifications() end,             desc = "[F]ind [N]otification History" },
       { "<leader>fp", function() Snacks.picker.projects() end,                  desc = "[F]ind [P]rojects" },
-      { "<leader>fe", function() require('mini.files').open() end,           desc = "[F]ile [E]xplorer" },
+      { "<leader>fe", function() require('mini.files').open() end,              desc = "[F]ile [E]xplorer" },
     }
   }
 }
