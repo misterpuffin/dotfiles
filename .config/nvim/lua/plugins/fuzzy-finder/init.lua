@@ -31,9 +31,19 @@ return {
             truncate = 40,
             filename_only = false,
             icon_width = 2,
-            git_status_hl = true
-          }
-        }
+            git_status_hl = true,
+          },
+        },
+        -- -- Always use git repo root for file operations
+        -- win = {
+        --   cwd = function()
+        --     local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+        --     if vim.v.shell_error == 0 and git_root then
+        --       return git_root
+        --     end
+        --     return vim.loop.cwd()
+        --   end
+        -- }
       },
       projects = {
         enabled = true,
@@ -47,13 +57,65 @@ return {
     },
     keys = {
       -- Find operations
-      { "<leader>ff", function() require('plugins.fuzzy-finder.fff').fff() end, desc = "[F]ind [F]iles" },
-      { "<leader>fb", function() Snacks.picker.buffers() end,                   desc = "[F]ind [B]uffers" },
-      { "<leader>fg", function() Snacks.picker.grep() end,                      desc = "[F]ind [G]rep" },
-      { "<leader>fc", function() Snacks.picker.command_history() end,           desc = "[F]ind [C]ommand History" },
-      { "<leader>fn", function() Snacks.picker.notifications() end,             desc = "[F]ind [N]otification History" },
-      { "<leader>fp", function() Snacks.picker.projects() end,                  desc = "[F]ind [P]rojects" },
-      { "<leader>fe", function() require('mini.files').open() end,              desc = "[F]ile [E]xplorer" },
-    }
-  }
+      {
+        "<leader>ff",
+        function()
+          local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+          if vim.v.shell_error == 0 and git_root then
+            require("plugins.fuzzy-finder.fff").fff(git_root)
+          else
+            require("plugins.fuzzy-finder.fff").fff()
+          end
+        end,
+        desc = "[F]ind [F]iles",
+      },
+      {
+        "<leader>fb",
+        function()
+          Snacks.picker.buffers()
+        end,
+        desc = "[F]ind [B]uffers",
+      },
+      {
+        "<leader>fg",
+        function()
+          local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+          if vim.v.shell_error == 0 and git_root then
+            Snacks.picker.grep({ cwd = git_root })
+          else
+            Snacks.picker.grep()
+          end
+        end,
+        desc = "[F]ind [G]rep",
+      },
+      {
+        "<leader>fc",
+        function()
+          Snacks.picker.command_history()
+        end,
+        desc = "[F]ind [C]ommand History",
+      },
+      {
+        "<leader>fn",
+        function()
+          Snacks.picker.notifications()
+        end,
+        desc = "[F]ind [N]otification History",
+      },
+      {
+        "<leader>fp",
+        function()
+          Snacks.picker.projects()
+        end,
+        desc = "[F]ind [P]rojects",
+      },
+      {
+        "<leader>fe",
+        function()
+          require("mini.files").open()
+        end,
+        desc = "[F]ile [E]xplorer",
+      },
+    },
+  },
 }
