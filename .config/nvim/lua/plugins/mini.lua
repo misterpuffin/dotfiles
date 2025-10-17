@@ -12,10 +12,21 @@ return {
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
+      -- vim-surround style keymaps
+      -- - ysiw) - [Y]ou [S]urround [I]nner [W]ord [)]Paren
+      -- - ds'   - [D]elete [S]urround [']quotes
+      -- - cs)"  - [C]hange [S]urround [)] to ["]
+      require('mini.surround').setup({
+        mappings = {
+          add = 'ys', -- Add surrounding
+          delete = 'ds', -- Delete surrounding
+          find = '', -- Find surrounding (disable)
+          find_left = '', -- Find surrounding (disable)
+          highlight = '', -- Highlight surrounding (disable)
+          replace = 'cs', -- Change surrounding
+          update_n_lines = '', -- Update `n_lines` (disable)
+        },
+      })
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
