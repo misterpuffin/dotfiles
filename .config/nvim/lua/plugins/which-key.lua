@@ -49,6 +49,8 @@ return {
         { "<leader>g", group = "[G]it", mode = { "n", "v" } },
         { "<leader>c", group = "[C]ode" },
         { "<leader>t", group = "[T]oggle" },
+        { "<leader>r", group = "[R]EPL" },
+        { "<leader>s", group = "[S]end to REPL", mode = { "n", "v" } },
       },
     },
   },
