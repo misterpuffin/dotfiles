@@ -148,4 +148,5 @@ etc/clusto*.conf
 !.config/hexdump.format
 
 # Kitty conf
+!.config/kitty
 !.config/kitty/*
