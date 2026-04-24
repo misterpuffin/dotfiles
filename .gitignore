@@ -150,3 +150,6 @@ etc/clusto*.conf
 # Kitty conf
 !.config/kitty
 !.config/kitty/*
+
+# Starship prompt
+!.config/starship.toml

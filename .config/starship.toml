@@ -1,0 +1,96 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "gruvbox_material_dark"
+scan_timeout = 30
+
+# Pure preset format
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+right_format = "$python$time"
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "grey"
+
+[directory]
+truncation_length = 8
+style = "bold blue"
+read_only = " 󰌾"
+
+[character]
+success_symbol = "[❯](aqua)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+format = "[$branch]($style)"
+symbol = " "
+style = "bold purple"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](orange) ($ahead_behind$stashed)]($style)"
+style = "aqua"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "grey"
+
+[git_commit]
+tag_symbol = "  "
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+symbol = " "
+style = "grey"
+detect_extensions = []
+detect_files = []
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "blue"
+
+[hostname]
+ssh_only = false
+ssh_symbol = " "
+format = "[@$hostname]($style) "
+style = "blue"
+
+# Gruvbox Material Dark palette
+[palettes.gruvbox_material_dark]
+bg = "#1d2021"
+bg1 = "#282828"
+bg3 = "#3c3836"
+bg5 = "#504945"
+fg = "#d4be98"
+red = "#ea6962"
+orange = "#e78a4e"
+yellow = "#d8a657"
+green = "#a9b665"
+aqua = "#89b482"
+blue = "#7daea3"
+purple = "#d3869b"
+grey = "#7c6f64"
+grey1 = "#928374"
