@@ -12,18 +12,17 @@ return {
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
-      -- vim-surround style keymaps
-      -- - ysiw) - [Y]ou [S]urround [I]nner [W]ord [)]Paren
-      -- - ds'   - [D]elete [S]urround [']quotes
-      -- - cs)"  - [C]hange [S]urround [)] to ["]
+      -- - gsa)  - [S]urround [A]dd [)]Paren
+      -- - gsd'  - [S]urround [D]elete [']quotes
+      -- - gsr)" - [S]urround [R]eplace [)] with ["]
       require('mini.surround').setup({
         mappings = {
-          add = 'ys', -- Add surrounding
-          delete = 'ds', -- Delete surrounding
+          add = 'gsa', -- Add surrounding
+          delete = 'gsd', -- Delete surrounding
           find = '', -- Find surrounding (disable)
           find_left = '', -- Find surrounding (disable)
           highlight = '', -- Highlight surrounding (disable)
-          replace = 'cs', -- Change surrounding
+          replace = 'gsr', -- Replace surrounding
           update_n_lines = '', -- Update `n_lines` (disable)
         },
       })
