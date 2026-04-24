@@ -45,12 +45,13 @@ return {
 
       -- Document existing key chains
       spec = {
+        { "<leader>b", group = "[B]reakpoint/Debug" },
+        { "<leader>c", group = "[C]ode" },
         { "<leader>f", group = "[F]ind/Files" },
         { "<leader>g", group = "[G]it", mode = { "n", "v" } },
-        { "<leader>c", group = "[C]ode" },
+        { "<leader>s", group = "[S]election (treesitter)" },
         { "<leader>t", group = "[T]oggle" },
-        { "<leader>r", group = "[R]EPL" },
-        { "<leader>s", group = "[S]end to REPL", mode = { "n", "v" } },
+        { "<leader>v", group = "[V]scode-diff" },
       },
     },
   },

@@ -5,7 +5,7 @@ return {
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -16,10 +16,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "gnn", 
-          node_incremental = "grn",
-          scope_incremental = "grc",
-          node_decremental = "grm"
+          init_selection = "<leader>si",
+          node_incremental = "<leader>sn",
+          scope_incremental = "<leader>ss",
+          node_decremental = "<leader>sp"
         }
       }
     },

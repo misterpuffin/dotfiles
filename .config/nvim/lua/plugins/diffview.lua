@@ -19,21 +19,21 @@ return {
         end
 
         -- Navigation
-        map('n', ']c', function()
+        map('n', ']h', function()
           if vim.wo.diff then
             vim.cmd.normal { ']c', bang = true }
           else
             gitsigns.nav_hunk 'next'
           end
-        end, { desc = 'Jump to next git [c]hange' })
+        end, { desc = 'Jump to next git [h]unk' })
 
-        map('n', '[c', function()
+        map('n', '[h', function()
           if vim.wo.diff then
             vim.cmd.normal { '[c', bang = true }
           else
             gitsigns.nav_hunk 'prev'
           end
-        end, { desc = 'Jump to previous git [c]hange' })
+        end, { desc = 'Jump to previous git [h]unk' })
 
         -- Actions
         -- visual mode
@@ -62,17 +62,25 @@ return {
     },
   },
   {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",  -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
-
-      -- Only one of these is needed.
-      "folke/snacks.nvim", -- optional
-    },
+    "esmuellert/codediff.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    cmd = "CodeDiff",
     keys = {
-      { "<leader>gg", function() require('neogit').open() end, desc = "[G]it Neo[g]it" },
-      { "<leader>gm", "<cmd>DiffviewOpen origin/master<CR>", desc = "[G]it diff vs [M]aster" },
+      -- Diff views
+      { "<leader>vd", "<cmd>CodeDiff<CR>",             desc = "[V]scode-diff [d]iff status" },
+      { "<leader>vm", function()
+        local base = vim.fn.system("git merge-base origin/master HEAD"):gsub("%s+", "")
+        vim.cmd("CodeDiff " .. base)
+      end, desc = "[V]scode-diff vs [m]aster" },
+      { "<leader>vf", "<cmd>CodeDiff file HEAD<CR>",   desc = "[V]scode-diff [f]ile vs HEAD" },
+      { "<leader>vc", "<cmd>CodeDiff HEAD~1 HEAD<CR>", desc = "[V]scode-diff last [c]ommit" },
+    },
+    opts = {
+      explorer = {
+        position = "left",
+        width = 40,
+      },
+      hide_merge_artifacts = false,
     },
   }
 }
