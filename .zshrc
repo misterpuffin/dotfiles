@@ -81,8 +81,10 @@ plugins=(
 
 
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh' 'bindkey "^ " autosuggest-accept')
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -123,6 +125,5 @@ fi
 
 . "$HOME/.local/bin/env"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(starship init zsh)"
